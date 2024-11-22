@@ -1,0 +1,203 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    color: #2d3436;
+    line-height: 1.6;
+}
+
+/* Header styles */
+header {
+    background-color: #000;
+    padding: 1rem 2rem;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, #0e0e0e, #edfe00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+nav a {
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    text-decoration: none;
+    margin: 0 1rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #ffd700;
+}
+
+/* Main content styles */
+main {
+    padding: 80px 20px 20px; /* Padding to ensure the content is not hidden behind the fixed navbar */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+main h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+/* Form styles */
+form {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+form input,
+form textarea {
+    padding: 1rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #ffd700;
+}
+
+form button {
+    padding: 1rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #ffd700;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #f39c12;
+}
+
+/* Option styles */
+form select {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    font-size: 1rem;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    color: #333;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    appearance: none; /* Menghapus tampilan default dropdown */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+}
+
+/* Add custom arrow */
+form select::after {
+    content: '\f078'; /* Unicode untuk panah ke bawah */
+    font-family: 'FontAwesome'; /* Font Awesome untuk ikon */
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #333;
+}
+
+/* Option styles */
+form select option {
+    padding: 1rem;
+    font-size: 1rem;
+    background-color: #fff;
+    border: none;
+    color: #333;
+    border-radius: 8px;
+    outline: none;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for options */
+form select option:hover {
+    background-color: #f9f9f9; /* Warna latar belakang pada hover */
+}
+
+/* Focus effect for select element */
+form select:focus {
+    border-color: #ffd700; /* Warna kuning saat select difokuskan */
+}
+
+/* Styling for the select wrapper */
+form .select-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+
+/* Success/Error message styles */
+p {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+p[style="color: green;"] {
+    color: green;
+}
+
+p[style="color: red;"] {
+    color: red;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem;
+    }
+
+    header h1 {
+        margin-bottom: 1rem;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    form {
+        padding: 1.5rem;
+    }
+}
